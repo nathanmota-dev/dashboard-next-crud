@@ -1,12 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/userModel';
+import User from '../../src/api/models/userModel';
 import dotenv from 'dotenv';
+import { connectToDB } from '@/api/database/db';
 
 dotenv.config();
 
 export default async function loginHandler(req: NextApiRequest, res: NextApiResponse) {
+
+    await connectToDB();
+
     if (req.method !== 'POST') {
         return res.status(405).json({ msg: "Método não permitido" });
     }
@@ -33,6 +37,8 @@ export default async function loginHandler(req: NextApiRequest, res: NextApiResp
             process.env.JWT_SECRET || "",
             { expiresIn: '1h' }
         );
+
+        console.log("JWT Secret:", process.env.JWT_SECRET);
 
         return res.status(200).json({
             msg: "Login realizado com sucesso!",
