@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard com CRUD de Usuários - Next.js
 
-## Getting Started
+Este é um projeto de Dashboard com um CRUD para gerenciamento de usuários, desenvolvido como parte de um desafio técnico. 
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js 15**
+- **Tailwind CSS**
+- **MongoDB**
+- **ShadcnUI**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Cadastro de usuário
+- Listagem de usuários
+- Edição de usuários
+- Exclusão de usuários
+- Permissões diferentes para usuários
+- Login de usuário utilizando JWT
+- Resgate de informações do usuário no acesso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Rotas Backend
 
-## Learn More
+| Método | Rota                             | Descrição                        | Parâmetros                                                                                                                                         |
+|--------|----------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| POST   | `/api`                           | Criar usuário                   | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                   |
+| GET    | `/api`                           | Exibir todos os usuários        | -                                                                                                                                                   |
+| PUT    | `/api/[id]`                     | Editar usuário                  | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                   |
+| DELETE | `/api/[id]`                     | Deletar usuário                 | -                                                                                                                                                   |
+| POST   | `/api/login`                    | Login de usuário                | ```json<br>{<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                                           |
+| PUT    | `/api/[id]/role`                | Alterar permissão do usuário    | ```json<br>{<br>  "_id": "67273cadb21a8690214da0be",<br>  "role": "Admin"<br>}<br>```                                                     |
 
-To learn more about Next.js, take a look at the following resources:
+## Como Executar o Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/nathanmota-dev/dashboard-next-crud
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd dashboard-next-crud
+   ```
 
-## Deploy on Vercel
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Acesse a aplicação em `http://localhost:3000`.
+
+6. Para Testar a API, acesse `http://localhost:3000/api`.
+
+## Contribuições
+
+Sinta-se à vontade para contribuir com melhorias ou correções!
