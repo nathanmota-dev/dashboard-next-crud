@@ -1,6 +1,5 @@
 "use client";
 
-import PageTitle from "@/components/PageTitle";
 import DashboardLayout from "../dashboard/DashboardLayout";
 import { useState, useEffect } from 'react';
 import { Pencil, Trash2 } from 'lucide-react';
@@ -91,12 +90,9 @@ export default function Users() {
 
 
     return (
-        <DashboardLayout>
+        <DashboardLayout title="Alterar e Editar Usuários">
             <div className="min-h-screen p-10">
                 <div className="container mx-auto p-4 bg-white dark:bg-black text-black dark:text-white">
-                    <div className="flex justify-between items-center mb-10">
-                        <PageTitle title="Alterar e Editar Usuários" />
-                    </div>
                     <Table>
                         <TableHeader>
                             <TableRow>

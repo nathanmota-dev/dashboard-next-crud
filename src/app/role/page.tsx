@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { User, UserCog } from 'lucide-react';
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import PageTitle from "@/components/PageTitle";
 
 type User = {
     _id: string;
@@ -72,12 +71,9 @@ export default function Role() {
     if (error) return <p>{error}</p>;
 
     return (
-        <DashboardLayout>
+        <DashboardLayout title="Gerenciamento de Roles de Usuários">
             <div className="min-h-screen p-10">
-                <div className="container mx-auto p-4 bg-white dark:bg-black text-black dark:text-white">
-                    <div className="flex justify-between items-center mb-10">
-                        <PageTitle title="Gerenciamento de Roles de Usuários" />
-                    </div>
+                <div className="container mx-auto p-4 bg-white dark:bg-black text-black dark:text-white">                    
                     <Table>
                         <TableHeader>
                             <TableRow>

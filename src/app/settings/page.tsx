@@ -3,7 +3,6 @@
 import { DataTable } from "@/components/DataTable";
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
-import PageTitle from "@/components/PageTitle";
 import DashboardLayout from "../dashboard/DashboardLayout";
 
 type Props = {};
@@ -44,12 +43,9 @@ const data: Setting[] = [
 
 export default function SettingsPage({ }: Props) {
     return (
-        <DashboardLayout>
+        <DashboardLayout title="Configurações" >
             <div className="min-h-screen p-10">
-                <div className="container mx-auto p-4 bg-white dark:bg-black text-black dark:text-white">
-                    <div className="flex justify-between items-center mb-10">
-                        <PageTitle title="Configurações" />
-                    </div>
+                <div className="container mx-auto p-4 bg-white dark:bg-black text-black dark:text-white">                    
                     <div>
                         <DataTable columns={columns} data={data} />
                     </div>

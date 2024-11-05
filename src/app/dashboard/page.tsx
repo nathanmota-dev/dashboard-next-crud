@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { DollarSign, Users, CreditCard, Activity } from "lucide-react";
-import PageTitle from "@/components/PageTitle";
 import Card, { CardContent, CardProps } from "@/components/Card";
 import BarChart from "@/components/BarChart";
 import SalesCard, { SalesProps } from "@/components/SalesCard";
@@ -84,9 +83,8 @@ export default function Dashboard() {
     }
 
     return (
-        <DashboardLayout>
+        <DashboardLayout title="Dashboard">
             <div className="flex flex-col gap-5 w-full p-10">
-                <PageTitle title="Dashboard" />
                 <section className="grid w-full grid-cols-1 gap-4 gap-x-8 transition-all sm:grid-cols-2 xl:grid-cols-4">
                     {cardData.map((d, i) => (
                         <Card
