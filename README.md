@@ -21,14 +21,15 @@ Este é um projeto de Dashboard com um CRUD para gerenciamento de usuários, des
 
 ## Rotas Backend
 
-| Método | Rota                             | Descrição                        | Parâmetros                                                                                                                                         |
-|--------|----------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| POST   | `/api`                           | Criar usuário                   | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                   |
-| GET    | `/api`                           | Exibir todos os usuários        | -                                                                                                                                                   |
-| PUT    | `/api/[id]`                     | Editar usuário                  | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                   |
-| DELETE | `/api/[id]`                     | Deletar usuário                 | -                                                                                                                                                   |
-| POST   | `/api/login`                    | Login de usuário                | ```json<br>{<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                                           |
-| PUT    | `/api/[id]/role`                | Alterar permissão do usuário    | ```json<br>{<br>  "_id": "67273cadb21a8690214da0be",<br>  "role": "Admin"<br>}<br>```                                                     |
+| Método | Rota                           | Descrição                     | Parâmetros                                                                                                                           |
+|--------|--------------------------------|--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| POST   | `/api`                         | Criar usuário                  | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                              |
+| GET    | `/api`                         | Exibir todos os usuários       | -                                                                                                                                     |
+| PUT    | `/api/[id]`                    | Editar usuário                 | ```json<br>{<br>  "name": "teste",<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                              |
+| DELETE | `/api/[id]`                    | Deletar usuário                | -                                                                                                                                     |
+| POST   | `/api/login`                   | Login de usuário               | ```json<br>{<br>  "email": "teste@teste.com",<br>  "password": "teste"<br>}<br>```                                                    |
+| PUT    | `/api/[id]/role`               | Alterar permissão do usuário   | ```json<br>{<br>  "_id": "67273cadb21a8690214da0be",<br>  "role": "Admin"<br>}<br>```                                                |
+| GET    | `/api/profile`                 | Resgatar informações do usuário| - (necessário incluir o token JWT no cabeçalho `Authorization`)                                                     |
 
 ## Como Executar o Projeto
 
