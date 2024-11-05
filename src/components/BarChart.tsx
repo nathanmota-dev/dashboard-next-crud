@@ -75,7 +75,7 @@ export default function BarChart({ }: Props) {
                     fontSize={12}
                     tickFormatter={(value: number) => `$${value}`}
                 />
-                <Bar dataKey={"total"} radius={[4, 4, 0, 0]} fill="#b4a517" />
+                <Bar dataKey={"total"} radius={[4, 4, 0, 0]} fill="#facc15" />
             </BarGraph>
         </ResponsiveContainer>
     )

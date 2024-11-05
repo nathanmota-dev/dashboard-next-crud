@@ -1,18 +1,17 @@
 import Sidebar from '../../components/Sidebar';
-import { ModeToggle } from '../components/mode-toogle/index';
+import Header from '../components/Header';
 
 interface DashboardLayoutProps {
+    title: string;
     children: React.ReactNode;
 }
 
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ title, children }) => {
     return (
         <div className="h-full flex">
             <Sidebar />
             <div className="flex-1 relative">
-                <div className="absolute right-4 top-4">
-                    <ModeToggle />
-                </div>
+                <Header title={title} />
                 {children}
             </div>
         </div>
